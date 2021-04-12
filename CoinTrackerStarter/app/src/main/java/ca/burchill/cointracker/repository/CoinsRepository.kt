@@ -31,8 +31,7 @@ class CoinsRepository (private val database: CoinsDatabase) {
     suspend fun refreshCoins() {
         withContext(Dispatchers.IO) {
             Timber.d("refresh coins was called")
-            val coinApi = CoinApi.retrofitService.getCoins()
-            val coinList = NetworkCoinContainer(coinApi.status,coinApi.coins)
+            val coinList = NetworkCoinContainer(CoinApi.retrofitService.getCoins().status,CoinApi.retrofitService.getCoins().coins)
             database.coinDao.insertAll(coinList.asDatabaseModel())
         }
     }

@@ -9,7 +9,7 @@ import retrofit2.HttpException
 import timber.log.Timber
 
 /*
- * Author: Minh Hoang
+ *  Author: Minh Hoang
  *  Description: Android Dev - Coin Tracker Application
  *  Date: 2021-04-11
  *  NOTE: Based on Android Codelab 9.2
